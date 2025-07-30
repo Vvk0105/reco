@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - RECO Architects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav id="header" id="page-contents">
+    <label class="logo" id="welcome-section">
+        <a href="index.html"><img class="logo-top" src="Logo/reco logo white.webp" alt="RECO Architects"></a>
+    </label>
+    <ul>
+        <a href="javascript:void(0);" class="header-btn" id="toggle-page">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                <circle cx="25" cy="25" r="25" fill="white" />
+            </svg>
+        </a>
+    </ul>
+</nav>
+
+<div class="contact-container">
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="post" class="contact-left">
+        <div class="contact-left-title">
+            <h2>Contact Us</h2>
+            <hr>
+        </div>
+        <input type="hidden" name="access_key" value="ee7aa49a-75c5-49f4-8dcd-93d33238f8b1">
+        <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
+        <input type="email" name="email" placeholder="Your Email" class="contact-input" required>
+        <textarea name="message" placeholder="Message" class="contact-input" required></textarea>
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        <button id="submitButton" type="submit">Submit</button>
+    </form>
+
+    <div class="contact-right" style="font-family: 'Courier New', Courier, monospace;">
+        <label>Address</label>
+        <p>ReCo Architects</p>
+        <p>46/3376, Judge Road</p>
+        <p>Karamana</p>
+        <p>Thiruvananthapuram - 695002</p>
+        <br>
+        <label>Contact</label>
+        <p id="phone-number">062382 90540</p>
+        <br>
+        <label>Support</label>
+        <p>recoarchitects@gmail.com</p>
+    </div>
+</div>
+
+<!-- Toast Notification Container -->
+<div id="toastContainer" class="toast-container"></div>
+
+<!-- Service Menu -->
+<div class="service-container" id="services-page">
+    <div class="service-content">
+        <h2>Our Services</h2>
+        <ul>
+            <li><a href="studio.html">Studio</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="coming-soon.html">Publications</a></li>
+            <li><a href="coming-soon.html">Workshop</a></li>
+            <li><a href="coming-soon.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>At Reco, we craft innovative and timeless designs, redefining spaces with creativity and expertise.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>ReCo Architects</p>
+            <p>46/3376,JudgeRoad</p>
+            <p>Karamana</p>
+            <p>Thiruvananthapuram-695002</p>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/ReCoArchitects/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/reco_architects/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 RECO Architects. All rights reserved.</p>
+    </div>
+</footer>
+<!-- Include your site footer manually here if needed -->
+<script src="scripts.js"></script>
+</body>
+</html>
