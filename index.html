@@ -8,7 +8,6 @@
     <title>RECO Architects</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <!-- <div class="loader-container">
         <div class="loader"></div>
@@ -140,20 +139,104 @@
     </div>
 
     <!-- Content Section -->
-    <section class="content-section">
-        <div class="images">
-            <img src="compressed img/com_gra/House final.webp" alt="House Design" class="vertical">
-            <img src="compressed img/com_gra/1738431752936.webp" alt="House Interior" class="overlap">
+    <div class="container">
+        <!-- Design Philosophy Section -->
+        <div class="philosophy-header">
+            <h1>Design Philosophy</h1>
+            <p class="intro-text">
+                At RECO Architects, we believe architecture should do more than look good
+                — it should respond to its context, its users, and its time.
+            </p>
+            <p class="intro-text">
+                We approach every project with respect for the site, the environment, and the
+                people it serves.
+            </p>
+            
+            <div class="values-section">
+                <h3>Our core values:</h3>
+                <ul>
+                    <li>• Sustainability – Responsible design rooted in nature and material awareness</li>
+                    <li>• Contextual Design – Architecture shaped by place and culture</li>
+                    <li>• Attention to Detail – Precision and care at every scale</li>
+                    <li>• User-Centric – Spaces that feel intuitive, comfortable, and enduring</li>
+                </ul>
+            </div>
+            
+            <p class="intro-text">
+                Each space we create is a balance of form and feeling — designed with
+                purpose, built to last.
+            </p>
+            
+            <blockquote class="main-quote">
+                "We design not just for today, but for the way people will live, feel,
+                and connect tomorrow."
+            </blockquote>
         </div>
-        <div class="text-content">
-            <h3>Crafting Timeless Designs with Top Architects in Kerala</h3>
-            <p>At Reco, we specialize in creating timeless architectural designs that seamlessly blend innovation and artistry. As leading architects in Kerala, we strive to craft inspiring spaces that elevate everyday living with creativity and functionality.</p>
+
+        <!-- Three Column Section -->
+        <div class="three-column-section">
+            <!-- Contact Form Column -->
+            <div class="column contact-column">
+                <div class="card">
+                    <h2>Get In Touch</h2>
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="post" class="contact-left1">
+                        <input type="hidden" name="access_key" value="ee7aa49a-75c5-49f4-8dcd-93d33238f8b1">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" class="form-input form-textarea" rows="4" maxlength="500" required></textarea>
+                        </div>
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Philosophy Column -->
+            <div class="column philosophy-column">
+                <div class="card card-center">
+                    <h3>Design Philosophy</h3>
+                    <p class="philosophy-quote">
+                        "We design not just for today, but for the way people will live, feel,
+                        and connect tomorrow."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Links Column -->
+            <div class="column links-column">
+                <div class="card">
+                    <h3>Our Services</h3>
+                    <div class="service-links">
+                        <a href="projects.html" class="service-link">
+                            <span>Residential</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="projects.html" class="service-link">
+                            <span>Commercial</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="projects.html" class="service-link">
+                            <span>Interiors</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="projects.html" class="service-link">
+                            <span>Landscape</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
     
     <section class="space-btwn">
         <div class="content-btwn">
-            <h2>Reco: Redefining Spaces with Vision and Elegance.</h2>
+            <h2>Art we live in.</h2>
         </div>
     </section>
 
@@ -222,25 +305,27 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section">
-                <h3>About Us</h3>
-                <p>At Reco, we craft innovative and timeless designs, redefining spaces with creativity and expertise.</p>
+                <!-- <h3>Our Location</h3> -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d246.63802593121565!2d76.9631053!3d8.4791051!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bb2ab8f2dc53%3A0x7a4e6eafabf70571!2sRECO%20Architects!5e0!3m2!1sen!2sin!4v1753804066512!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+
             <div class="footer-section">
                 <h3>Contact Info</h3>
-                <p>ReCo Architects</p>
+                <p>Reco Architects</p>
                 <p>46/3376,JudgeRoad</p>
                 <p>Karamana</p>
                 <p>Thiruvananthapuram-695002</p>
             </div>
+
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <div class="social-links">
@@ -249,8 +334,9 @@
                 </div>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2024 RECO Architects. All rights reserved.</p>
+            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
         </div>
     </footer>
 
