@@ -177,3 +177,96 @@ document.addEventListener('DOMContentLoaded', () => {
         revealOnScroll(); // Initial check
     }
 });
+
+let currentSlide = 0;
+let currentGallery = [];
+let slides = [];
+let thumbnails = [];
+
+const projectGalleries = {
+    "Arjun Residence": [
+        { src: "compressed img/IMG_0898.webp", caption: "Residential Complex - Bangalore, 2023" },
+        { src: "compressed img/IMG_0911.webp", caption: "Facade Detail - Evening View" },
+        { src: "compressed img/com_gra/IMG_0987.webp", caption: "Landscaped Courtyard" }
+    ],
+    "Luxury Villa": [
+        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
+        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
+        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
+    ],
+};
+
+function openGallery(projectName) {
+    const modal = document.getElementById('galleryModal');
+    const slidesContainer = document.querySelector('.gallery-slides');
+    const thumbnailsContainer = document.querySelector('.thumbnails');
+    const captionElement = document.getElementById('caption');
+
+    slidesContainer.innerHTML = '';
+    thumbnailsContainer.innerHTML = '';
+
+    currentGallery = projectGalleries[projectName];
+    slides = [];
+    thumbnails = [];
+
+    currentGallery.forEach((image, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'gallery-slide';
+        slide.innerHTML = `<img src="${image.src}" alt="${image.caption}">`;
+        slidesContainer.appendChild(slide);
+        slides.push(slide);
+
+        const thumb = document.createElement('div');
+        thumb.className = 'thumbnail';
+        if (index === 0) thumb.classList.add('active');
+        thumb.innerHTML = `<img src="${image.src}" alt="Thumbnail ${index + 1}">`;
+        thumb.onclick = () => goToSlide(index);
+        thumbnailsContainer.appendChild(thumb);
+        thumbnails.push(thumb);
+    });
+
+    captionElement.textContent = currentGallery[0]?.caption || '';
+    modal.style.display = 'flex';
+    currentSlide = 0;
+    updateSliderPosition();
+    document.body.classList.add('modal-open');
+}
+
+function closeGallery() {
+    document.getElementById('galleryModal').style.display = 'none';
+    document.body.classList.remove('modal-open');
+}
+
+function plusSlides(n) {
+    goToSlide(currentSlide + n);
+}
+
+function goToSlide(n) {
+    currentSlide = (n + slides.length) % slides.length;
+    updateSliderPosition();
+}
+
+function updateSliderPosition() {
+    const slidesContainer = document.querySelector('.gallery-slides');
+    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentSlide);
+    });
+    document.getElementById('caption').textContent = currentGallery[currentSlide]?.caption || '';
+}
+
+document.querySelectorAll('.view-project').forEach(button => {
+    button.addEventListener('click', function () {
+        const projectName = this.closest('.overlay-content').querySelector('h3').textContent;
+        openGallery(projectName);
+    });
+});
+
+document.addEventListener('keydown', function (e) {
+    const modal = document.getElementById('galleryModal');
+    if (modal.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') plusSlides(-1);
+        else if (e.key === 'ArrowRight') plusSlides(1);
+        else if (e.key === 'Escape') closeGallery();
+    }
+});
