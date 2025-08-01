@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Logo color switching
     const logo = document.querySelector('.logo-top');
     // const servicesPage = document.getElementById('services-page');
-    const blackLogoPages = ['people', 'contact', 'about', 'studio'];
+    const blackLogoPages = ['people', 'about', 'studio', 'projects'];
     const currentPage = window.location.pathname.split('/').pop().split('.')[0];
 
     if(logo) {
@@ -187,9 +187,52 @@ const projectGalleries = {
     "Arjun Residence": [
         { src: "compressed img/IMG_0898.webp", caption: "Residential Complex - Bangalore, 2023" },
         { src: "compressed img/IMG_0911.webp", caption: "Facade Detail - Evening View" },
-        { src: "compressed img/com_gra/IMG_0987.webp", caption: "Landscaped Courtyard" }
+        { src: "compressed img/com_gra/IMG_0987.webp", caption: "Landscaped Courtyard" },
+        { src: "compressed img/IMG_0898.webp", caption: "Residential Complex - Bangalore, 2023" },
+        { src: "compressed img/IMG_0911.webp", caption: "Facade Detail - Evening View" },
+        { src: "compressed img/com_gra/IMG_0987.webp", caption: "Landscaped Courtyard" },
     ],
-    "Luxury Villa": [
+    "Church": [
+        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
+        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
+        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
+    ],
+    "Concordia": [
+        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
+        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
+        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
+    ],
+    "Dental Clinic": [
+        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
+        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
+        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
+    ],
+    "Gym Hyd": [
+        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
+        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
+        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
+    ],
+    "Kalyan Landscape": [
+        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
+        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
+        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
+    ],
+    "Lourde": [
+        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
+        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
+        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
+    ],
+    "Reco": [
+        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
+        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
+        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
+    ],
+    "Sathish": [
+        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
+        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
+        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
+    ],
+    "Sibi": [
         { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
         { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
         { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
@@ -269,4 +312,80 @@ document.addEventListener('keydown', function (e) {
         else if (e.key === 'ArrowRight') plusSlides(1);
         else if (e.key === 'Escape') closeGallery();
     }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.querySelector('.portfolio-slider');
+  const prevBtn = document.querySelector('.slider-prev');
+  const nextBtn = document.querySelector('.slider-next');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  
+  if (slider && prevBtn && nextBtn) {
+    let currentIndex = 0;
+    const itemWidth = portfolioItems[0].offsetWidth + 30; // width + gap
+    
+    function updateSlider() {
+      slider.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+      
+      // Disable prev button if at start
+      prevBtn.disabled = currentIndex === 0;
+      
+      // Disable next button if at end (showing last full item)
+      nextBtn.disabled = currentIndex >= portfolioItems.length - Math.floor(slider.offsetWidth / itemWidth);
+    }
+    
+    prevBtn.addEventListener('click', function() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+      }
+    });
+    
+    nextBtn.addEventListener('click', function() {
+      if (currentIndex < portfolioItems.length - 1) {
+        currentIndex++;
+        updateSlider();
+      }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      itemWidth = portfolioItems[0].offsetWidth + 30;
+      updateSlider();
+    });
+    
+    // Initialize
+    updateSlider();
+    
+    // Touch support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    slider.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+    
+    slider.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, {passive: true});
+    
+    function handleSwipe() {
+      const threshold = 50;
+      if (touchEndX < touchStartX - threshold) {
+        // Swipe left - next
+        if (currentIndex < portfolioItems.length - 1) {
+          currentIndex++;
+          updateSlider();
+        }
+      } else if (touchEndX > touchStartX + threshold) {
+        // Swipe right - prev
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider();
+        }
+      }
+    }
+  }
 });
