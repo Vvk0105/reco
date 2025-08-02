@@ -185,12 +185,9 @@ let thumbnails = [];
 
 const projectGalleries = {
     "Arjun Residence": [
-        { src: "compressed img/IMG_0898.webp", caption: "Residential Complex - Bangalore, 2023" },
-        { src: "compressed img/IMG_0911.webp", caption: "Facade Detail - Evening View" },
-        { src: "compressed img/com_gra/IMG_0987.webp", caption: "Landscaped Courtyard" },
-        { src: "compressed img/IMG_0898.webp", caption: "Residential Complex - Bangalore, 2023" },
-        { src: "compressed img/IMG_0911.webp", caption: "Facade Detail - Evening View" },
-        { src: "compressed img/com_gra/IMG_0987.webp", caption: "Landscaped Courtyard" },
+        { src: "compressed img/arjun/75747932-5885-4991-85de-b46393dab273.avif", caption: "" },
+        { src: "compressed img/arjun/4213b530-2344-4e69-ac5c-2b5a31595aeb.avif", caption: "" },
+        { src: "compressed img/arjun/IMG_9181.avif", caption: "" },
     ],
     "Church": [
         { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
@@ -233,9 +230,9 @@ const projectGalleries = {
         { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
     ],
     "Sibi": [
-        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
-        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
-        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
+        { src: "compressed img/sibi/IMG_9383.avif", caption: "dadsa" },
+        { src: "compressed img/sibi/IMG_9510.avif", caption: "fdsfdsf" },
+        { src: "compressed img/sibi/IMG_9438.avif", caption: "fsdfdsf" }
     ],
 };
 
