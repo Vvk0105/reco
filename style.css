@@ -848,13 +848,24 @@ video.background-video {
   transition: all 0.3s ease;
   cursor: pointer;
   background: transparent;
-  color: white;
+  color: #1a1a1a;
 }
 
 .view-project:hover {
   background: #ffffff;
   color: #1a1a1a;
 }
+
+.project-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.project-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
 
 .project-details {
   padding: 20px;
@@ -1337,13 +1348,30 @@ body.modal-open {
     padding: 10px 20px;
 }
 .close-modal {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1100;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .close-modal {
+    font-size: 2.5rem;
+    right: 10px;
+    top: 10px;
+  }
+
+  .gallery-slide img {
+    max-height: 60vh;
+    object-fit: contain;
+  }
+
+  .gallery-container {
+    padding-top: 50px; /* so the X button is not overlapped */
+  }
 }
 .close-modal:hover {
     color: #ff4b2b;

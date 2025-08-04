@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Sukrithi": [
         { src: "compressed img/arjun/IMG_9181.avif" },
         { src: "compressed img/arjun/75747932-5885-4991-85de-b46393dab273.avif" },
-        { src: "residential/sukrithi/3.webp" }
+        { src: "compressed img/arjun/4213b530-2344-4e69-ac5c-2b5a31595aeb.avif" }
     ],
     "Split Skin": [
         { src: "residential/split_skin/1.webp" },
@@ -128,4 +128,10 @@ document.addEventListener("DOMContentLoaded", () => {
             else if (e.key === "ArrowRight") goToSlide(currentSlide + 1);
         }
     });
+});
+
+document.getElementById("galleryModal").addEventListener("click", (e) => {
+  if (e.target.id === "galleryModal") {
+    closeGallery();
+  }
 });
