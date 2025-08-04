@@ -2802,6 +2802,61 @@ footer {
     opacity: 1;
 }
 
+/* Commercial Page Specific Styles */
+.commercial-hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('path-to-commercial-hero-image.jpg') center/cover no-repeat;
+}
+
+/* Interiors Page Specific Styles */
+.interiors-hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('path-to-interiors-hero-image.jpg') center/cover no-repeat;
+}
+
+/* Landscape Page Specific Styles */
+.landscape-hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('path-to-landscape-hero-image.jpg') center/cover no-repeat;
+}
+
+/* Common Hero Styles for All Category Pages */
+.commercial-hero,
+.interiors-hero,
+.landscape-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 110px;
+}
+
+.commercial-hero .hero-content h1,
+.interiors-hero .hero-content h1,
+.landscape-hero .hero-content h1 {
+    font-family: 'Klein-Text-Book-trial', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    /* animation: fadeInUp 1s ease; */
+}
+
+.commercial-hero .hero-content p,
+.interiors-hero .hero-content p,
+.landscape-hero .hero-content p {
+    font-family: 'Klein-ExtraLight-trial', sans-serif;
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #fff;
+    /* animation: fadeInUp 1s ease 0.2s forwards; */
+    opacity: 1;
+}
+
 .projects-section {
     padding: 80px 40px;
     background-color: #f8f8f8;

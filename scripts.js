@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Logo color switching
     const logo = document.querySelector('.logo-top');
     // const servicesPage = document.getElementById('services-page');
-    const blackLogoPages = ['people', 'about', 'studio', 'projects', 'residential', 'project-detail'];
+    const blackLogoPages = ['people', 'about', 'studio', 'projects', 'residential', 'project-detail', 'interiors', 'commercial', 'landscape'];
     const currentPage = window.location.pathname.split('/').pop().split('.')[0];
 
     if(logo) {
