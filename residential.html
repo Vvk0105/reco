@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Residential Projects | RECO Architects</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="header">
+    <label class="logo" id="welcome-section">
+      <a href="index.html"><img class="logo-top" src="Logo/reco logo black.webp" alt="logo" /></a>
+    </label>
+    <ul>
+      <a href="javascript:void(0);" class="header-btn" id="toggle-page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+          <circle cx="25" cy="25" r="25" fill="black" />
+        </svg>
+      </a>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Residential Projects</h1>
+      <p>Where families live, grow, and thrive — designed with heart and intent.</p>
+      <div class="hero-line"></div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="portfolio-section">
+    <div class="section-header">
+      <h2>Featured Works</h2>
+      <p>Explore some of our most refined residential spaces</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <!-- Sukrithi -->
+      <div class="portfolio-item">
+        <div class="item-image">
+          <img src="images/sukrithi-thumb.webp" alt="Sukrithi" loading="lazy" />
+          <div class="item-overlay">
+            <div class="overlay-content">
+              <h3>Sukrithi</h3>
+              <p>Murinjapalam, Trivandrum</p>
+              <span class="view-project" data-project="Sukrithi">View Project</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Split Skin -->
+      <div class="portfolio-item">
+        <div class="item-image">
+          <img src="images/split-skin-thumb.webp" alt="Split Skin" loading="lazy" />
+          <div class="item-overlay">
+            <div class="overlay-content">
+              <h3>Split Skin</h3>
+              <p>Sreekariyam, Trivandrum</p>
+              <span class="view-project" data-project="split-skin">View Project</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ekam -->
+      <div class="portfolio-item">
+        <div class="item-image">
+          <img src="images/ekam-thumb.webp" alt="Ekam" loading="lazy" />
+          <div class="item-overlay">
+            <div class="overlay-content">
+              <h3>Ekam</h3>
+              <p>Thirumala, Trivandrum</p>
+              <span class="view-project" data-project="ekam">View Project</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Modal -->
+  <div id="galleryModal" class="gallery-modal">
+    <span class="close-modal" onclick="closeGallery()">&times;</span>
+    <div class="gallery-container">
+      <div class="gallery-slides"></div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <div class="thumbnails"></div>
+    <div class="gallery-caption">
+      <p id="caption"></p>
+      <div id="project-details"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Our Location</h3>
+        <p>123 Architectural Avenue, Bangalore</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p>Phone: +91 12345 67890</p>
+        <p>Email: info@recoarchitects.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 RECO Architects. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="residential.js"></script>
+</body>
+</html>
