@@ -2775,7 +2775,7 @@ footer {
 .residential-hero {
     height: 70vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('compressed img/arjun/4213b530-2344-4e69-ac5c-2b5a31595aeb.avif') center/cover no-repeat;
+                url('compressed img/arjun/7.avif') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2806,21 +2806,21 @@ footer {
 .commercial-hero {
     height: 70vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('path-to-commercial-hero-image.jpg') center/cover no-repeat;
+                url('compressed img/reco/10.avif') center/cover no-repeat;
 }
 
 /* Interiors Page Specific Styles */
 .interiors-hero {
     height: 70vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('path-to-interiors-hero-image.jpg') center/cover no-repeat;
+                url('compressed img/sibi/4.avif') center/cover no-repeat;
 }
 
 /* Landscape Page Specific Styles */
 .landscape-hero {
     height: 70vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('path-to-landscape-hero-image.jpg') center/cover no-repeat;
+                url('compressed img/Lourde/1.avif') center/cover no-repeat;
 }
 
 /* Common Hero Styles for All Category Pages */
