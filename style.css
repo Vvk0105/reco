@@ -3193,7 +3193,7 @@ footer {
 }
 
 .project-description p {
-    font-family: 'Klein-ExtraLight-trial', sans-serif;
+    font-family:  sans-serif;
     font-size: 1.1rem;
     line-height: 1.8;
     color: #666;
@@ -3242,7 +3242,7 @@ footer {
 }
 
 .project-specs span {
-    font-family: 'Klein-ExtraLight-trial', sans-serif;
+    font-family: sans-serif;
     color: #666;
     font-size: 0.95rem;
 }
