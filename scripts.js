@@ -185,9 +185,9 @@ let thumbnails = [];
 
 const projectGalleries = {
     "Arjun Residence": [
-        { src: "compressed img/arjun/75747932-5885-4991-85de-b46393dab273.avif", caption: "" },
-        { src: "compressed img/arjun/4213b530-2344-4e69-ac5c-2b5a31595aeb.avif", caption: "" },
-        { src: "compressed img/arjun/IMG_9181.avif", caption: "" },
+        { src: "compressed img/arjun/1.avif", caption: "" },
+        { src: "compressed img/arjun/2.avif", caption: "" },
+        { src: "compressed img/arjun/3.avif", caption: "" },
     ],
     "Church": [
         { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
