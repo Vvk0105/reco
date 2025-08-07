@@ -1061,6 +1061,21 @@ video.background-video {
     }
 }
 
+#view-more-btn {
+  background-color: transparent;
+  border: 2px solid #333;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#view-more-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
 /* Fullscreen Modal Styles */
 .fullscreen-modal {
     display: none;
@@ -2629,20 +2644,6 @@ button:active {
 }
 
 
-#view-more-btn {
-  background-color: transparent;
-  border: 2px solid #333;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#view-more-btn:hover {
-  background-color: #333;
-  color: #fff;
-}
 
 
 /* end of about section   */
