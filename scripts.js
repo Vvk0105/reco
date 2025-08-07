@@ -396,3 +396,26 @@ window.addEventListener("load", () => {
     loader.style.display = "none";
   }, 500);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const portfolioItems = document.querySelectorAll(".portfolio-item");
+  const viewMoreBtn = document.getElementById("view-more-btn");
+
+  // Show only the first 6 items initially
+  const visibleCount = 6;
+
+  portfolioItems.forEach((item, index) => {
+    if (index >= visibleCount) {
+      item.style.display = "none";
+    }
+  });
+
+  if (viewMoreBtn) {
+    viewMoreBtn.addEventListener("click", function () {
+      portfolioItems.forEach(item => {
+        item.style.display = "block";
+      });
+      viewMoreBtn.style.display = "none";
+    });
+  }
+});
