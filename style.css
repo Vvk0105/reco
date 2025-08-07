@@ -1314,64 +1314,73 @@ body.modal-open {
     align-items: center;
     flex-direction: column;
 }
+
 .gallery-container {
     position: relative;
-    max-width: 90%;
-    max-height: 80vh;
-    width: 1000px;
+    width: 100%;
+    max-width: 90vw;
+    height: 80vh;
     overflow: hidden;
+    margin: auto;
 }
+
 .gallery-slides {
     display: flex;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
+
 .gallery-slide {
     min-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .gallery-slide img {
     max-width: 100%;
     max-height: 70vh;
     object-fit: contain;
 }
+
 .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
-    /* padding: 16px; */
     margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 28px;
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    border-radius: 3px;
     user-select: none;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
 }
-.next { right: 0; }
-/* .prev:hover, .next:hover {
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-} */
-.gallery-caption {
-    text-align: center;
-    color: white;
-    padding: 10px 20px;
 }
+
 .close-modal {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 1100;
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1100;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
 }
+
 @media (max-width: 768px) {
   .close-modal {
     font-size: 2.5rem;
@@ -3292,4 +3301,262 @@ footer {
     .project-detail-hero .hero-content h1 {
         font-size: 2rem;
     }
+}
+
+/* New Projects Gallery Styles */
+.projects-gallery-section {
+  padding: 80px 20px;
+  background-color: #f8f8f8;
+}
+
+.projects-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+
+.project-gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item-image {
+  position: relative;
+  padding-bottom: 70%;
+  overflow: hidden;
+}
+
+.gallery-item-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-gallery-item:hover .gallery-item-image img {
+  transform: scale(1.05);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  text-align: center;
+  color: #ffffff;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+  padding: 20px;
+}
+
+.project-gallery-item:hover .overlay-content {
+  transform: translateY(0);
+}
+
+.overlay-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.overlay-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.gallery-view-btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: transparent;
+  color: #ffffff;
+}
+
+.gallery-view-btn:hover {
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+.project-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.project-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* New Gallery Modal Styles */
+.new-gallery-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.new-gallery-container {
+  position: relative;
+  width: 100%;
+  max-width: 90vw;
+  height: 80vh;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-gallery-slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.new-gallery-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-gallery-slide img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.new-prev, .new-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  user-select: none;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+}
+
+.new-prev {
+  left: 0;
+}
+
+.new-next {
+  right: 0;
+}
+
+.new-prev:hover, .new-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.close-gallery {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1100;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-gallery:hover {
+  color: #ff4b2b;
+}
+
+.new-gallery-thumbnails {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.new-gallery-thumbnail {
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.new-gallery-thumbnail:hover, .new-gallery-thumbnail.active {
+  opacity: 1;
+  border-color: #ff4b2b;
+}
+
+.new-gallery-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.new-gallery-caption {
+  text-align: center;
+  color: white;
+  padding: 10px 20px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .new-gallery-container {
+    padding-top: 50px;
+  }
+  
+  .new-gallery-slide img {
+    max-height: 60vh;
+  }
+  
+  .close-gallery {
+    font-size: 2.5rem;
+    right: 10px;
+    top: 10px;
+  }
 }

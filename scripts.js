@@ -178,10 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Gallery functionality
 let currentSlide = 0;
 let currentGallery = [];
-let slides = [];
-let thumbnails = [];
 
 const projectGalleries = {
     "Arjun Residence": [
@@ -190,50 +189,12 @@ const projectGalleries = {
         { src: "compressed img/arjun/3.avif", caption: "" },
     ],
     "Church": [
-        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
-        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
-        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
+        { src: "compressed img/church/1.avif", caption: "Church project" },
+        { src: "compressed img/church/2.avif", caption: "Church interior" },
+        { src: "compressed img/church/3.avif", caption: "Church exterior" }
     ],
-    "Concordia": [
-        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
-        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
-        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
-    ],
-    "Dental Clinic": [
-        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
-        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
-        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
-    ],
-    "Gym Hyd": [
-        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
-        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
-        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
-    ],
-    "Kalyan Landscape": [
-        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
-        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
-        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
-    ],
-    "Lourde": [
-        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
-        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
-        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
-    ],
-    "Reco": [
-        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
-        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
-        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
-    ],
-    "Sathish": [
-        { src: "compressed img/IMG_0911.webp", caption: "dadsa" },
-        { src: "compressed img/IMG_0911.webp", caption: "fdsfdsf" },
-        { src: "compressed img/IMG_0911.webp", caption: "fsdfdsf" }
-    ],
-    "Sibi": [
-        { src: "compressed img/sibi/IMG_9383.avif", caption: "dadsa" },
-        { src: "compressed img/sibi/IMG_9510.avif", caption: "fdsfdsf" },
-        { src: "compressed img/sibi/IMG_9438.avif", caption: "fsdfdsf" }
-    ],
+    // Add all other projects with their respective images
+    // ...
 };
 
 function openGallery(projectName) {
@@ -242,34 +203,48 @@ function openGallery(projectName) {
     const thumbnailsContainer = document.querySelector('.thumbnails');
     const captionElement = document.getElementById('caption');
 
+    // Clear previous content
     slidesContainer.innerHTML = '';
     thumbnailsContainer.innerHTML = '';
 
-    currentGallery = projectGalleries[projectName];
-    slides = [];
-    thumbnails = [];
+    // Set current gallery and reset slide index
+    currentGallery = projectGalleries[projectName] || [];
+    currentSlide = 0;
 
+    // Create slides and thumbnails
     currentGallery.forEach((image, index) => {
+        // Create slide
         const slide = document.createElement('div');
         slide.className = 'gallery-slide';
-        slide.innerHTML = `<img src="${image.src}" alt="${image.caption}">`;
+        const img = document.createElement('img');
+        img.src = image.src;
+        img.alt = image.caption;
+        slide.appendChild(img);
         slidesContainer.appendChild(slide);
-        slides.push(slide);
 
+        // Create thumbnail
         const thumb = document.createElement('div');
         thumb.className = 'thumbnail';
         if (index === 0) thumb.classList.add('active');
-        thumb.innerHTML = `<img src="${image.src}" alt="Thumbnail ${index + 1}">`;
-        thumb.onclick = () => goToSlide(index);
+        const thumbImg = document.createElement('img');
+        thumbImg.src = image.src;
+        thumbImg.alt = `Thumbnail ${index + 1}`;
+        thumb.appendChild(thumbImg);
+        thumb.addEventListener('click', () => goToSlide(index));
         thumbnailsContainer.appendChild(thumb);
-        thumbnails.push(thumb);
     });
 
-    captionElement.textContent = currentGallery[0]?.caption || '';
+    // Set initial caption
+    if (currentGallery.length > 0) {
+        captionElement.textContent = currentGallery[0].caption || '';
+    }
+    
+    // Show modal
     modal.style.display = 'flex';
-    currentSlide = 0;
-    updateSliderPosition();
     document.body.classList.add('modal-open');
+    
+    // Position the slides correctly
+    updateSliderPosition();
 }
 
 function closeGallery() {
@@ -278,36 +253,68 @@ function closeGallery() {
 }
 
 function plusSlides(n) {
-    goToSlide(currentSlide + n);
+    currentSlide = (currentSlide + n + currentGallery.length) % currentGallery.length;
+    updateSliderPosition();
 }
 
 function goToSlide(n) {
-    currentSlide = (n + slides.length) % slides.length;
+    currentSlide = n;
     updateSliderPosition();
 }
 
 function updateSliderPosition() {
     const slidesContainer = document.querySelector('.gallery-slides');
-    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-    thumbnails.forEach((thumb, index) => {
-        thumb.classList.toggle('active', index === currentSlide);
-    });
-    document.getElementById('caption').textContent = currentGallery[currentSlide]?.caption || '';
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const captionElement = document.getElementById('caption');
+
+    if (slidesContainer && thumbnails && captionElement) {
+        // Move slides container to show current slide
+        slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update active thumbnail
+        thumbnails.forEach((thumb, index) => {
+            thumb.classList.toggle('active', index === currentSlide);
+        });
+
+        // Update caption
+        if (currentGallery[currentSlide]) {
+            captionElement.textContent = currentGallery[currentSlide].caption || '';
+        }
+    }
 }
 
-document.querySelectorAll('.view-project').forEach(button => {
-    button.addEventListener('click', function () {
-        const projectName = this.closest('.overlay-content').querySelector('h3').textContent;
-        openGallery(projectName);
+// Initialize gallery functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Attach click handlers to all view project buttons
+    document.querySelectorAll('.view-project').forEach(button => {
+        button.addEventListener('click', function() {
+            const projectName = this.closest('.overlay-content').querySelector('h3').textContent;
+            openGallery(projectName);
+        });
     });
-});
 
-document.addEventListener('keydown', function (e) {
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        const modal = document.getElementById('galleryModal');
+        if (modal && modal.style.display === 'flex') {
+            if (e.key === 'ArrowLeft') {
+                plusSlides(-1);
+            } else if (e.key === 'ArrowRight') {
+                plusSlides(1);
+            } else if (e.key === 'Escape') {
+                closeGallery();
+            }
+        }
+    });
+
+    // Close modal when clicking outside
     const modal = document.getElementById('galleryModal');
-    if (modal.style.display === 'flex') {
-        if (e.key === 'ArrowLeft') plusSlides(-1);
-        else if (e.key === 'ArrowRight') plusSlides(1);
-        else if (e.key === 'Escape') closeGallery();
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeGallery();
+            }
+        });
     }
 });
 
@@ -416,6 +423,186 @@ document.addEventListener("DOMContentLoaded", function () {
         item.style.display = "block";
       });
       viewMoreBtn.style.display = "none";
+    });
+  }
+});
+
+// New Gallery Functionality
+let newCurrentSlide = 0;
+let newCurrentGallery = [];
+
+const newProjectGalleries = {
+  "Arjun Residence": [
+    { src: "compressed img/arjun/1.avif", caption: "" },
+    { src: "compressed img/arjun/2.avif", caption: "" },
+    { src: "compressed img/arjun/3.avif", caption: "" }
+  ],
+  // Add other projects with their images
+  "Sibi": [
+    { src: "compressed img/sibi/1.avif", caption: "" },
+    { src: "compressed img/sibi/2.avif", caption: "" },
+    { src: "compressed img/sibi/3.avif", caption: "" }
+  ],
+  "Kalyan Landscape": [
+    { src: "compressed img/KL/1.avif", caption: "" },
+    { src: "compressed img/KL/2.avif", caption: "" },
+    { src: "compressed img/KL/3.avif", caption: "" }
+  ],
+  "Sathish": [
+    { src: "compressed img/Sathish/1.avif", caption: "" },
+    { src: "compressed img/Sathish/2.avif", caption: "" },
+    { src: "compressed img/Sathish/3.avif", caption: "" }
+  ],
+  "Lourde": [
+    { src: "compressed img/Lourde/1.avif", caption: "" },
+    { src: "compressed img/Lourde/2.avif", caption: "" },
+    { src: "compressed img/Lourde/3.avif", caption: "" }
+  ],
+  "Reco": [
+    { src: "compressed img/reco/1.avif", caption: "" },
+    { src: "compressed img/reco/2.avif", caption: "" },
+    { src: "compressed img/reco/3.avif", caption: "" }
+  ],
+  "Church": [
+    { src: "compressed img/church/1.avif", caption: "Church project" },
+    { src: "compressed img/church/2.avif", caption: "Church interior" },
+    { src: "compressed img/church/3.avif", caption: "Church exterior" }
+  ],
+  "Clinic": [
+    { src: "compressed img/clinic/1.avif", caption: "" },
+    { src: "compressed img/clinic/2.avif", caption: "" },
+    { src: "compressed img/clinic/3.avif", caption: "" }
+  ],
+  "Gym": [
+    { src: "compressed img/gym/1.avif", caption: "" },
+    { src: "compressed img/gym/2.avif", caption: "" },
+    { src: "compressed img/gym/3.avif", caption: "" }
+  ],
+  "Rock": [
+    { src: "compressed img/rock/1.avif", caption: "" },
+    { src: "compressed img/rock/2.avif", caption: "" },
+    { src: "compressed img/rock/3.avif", caption: "" }
+  ]
+  // Add more projects as needed
+};
+
+function openNewGallery(projectName) {
+  const modal = document.getElementById('newGalleryModal');
+  const slidesContainer = document.querySelector('.new-gallery-slides');
+  const thumbnailsContainer = document.querySelector('.new-gallery-thumbnails');
+  const captionElement = document.getElementById('newCaption');
+
+  // Clear previous content
+  slidesContainer.innerHTML = '';
+  thumbnailsContainer.innerHTML = '';
+
+  // Set current gallery and reset slide index
+  newCurrentGallery = newProjectGalleries[projectName] || [];
+  newCurrentSlide = 0;
+
+  // Create slides and thumbnails
+  newCurrentGallery.forEach((image, index) => {
+    // Create slide
+    const slide = document.createElement('div');
+    slide.className = 'new-gallery-slide';
+    const img = document.createElement('img');
+    img.src = image.src;
+    img.alt = image.caption;
+    slide.appendChild(img);
+    slidesContainer.appendChild(slide);
+
+    // Create thumbnail
+    const thumb = document.createElement('div');
+    thumb.className = 'new-gallery-thumbnail';
+    if (index === 0) thumb.classList.add('active');
+    const thumbImg = document.createElement('img');
+    thumbImg.src = image.src;
+    thumbImg.alt = `Thumbnail ${index + 1}`;
+    thumb.appendChild(thumbImg);
+    thumb.addEventListener('click', () => newGoToSlide(index));
+    thumbnailsContainer.appendChild(thumb);
+  });
+
+  // Set initial caption
+  if (newCurrentGallery.length > 0) {
+    captionElement.textContent = newCurrentGallery[0].caption || '';
+  }
+  
+  // Show modal
+  modal.style.display = 'flex';
+  document.body.classList.add('modal-open');
+  
+  // Position the slides correctly
+  newUpdateSliderPosition();
+}
+
+function closeNewGallery() {
+  document.getElementById('newGalleryModal').style.display = 'none';
+  document.body.classList.remove('modal-open');
+}
+
+function newPlusSlides(n) {
+  newCurrentSlide = (newCurrentSlide + n + newCurrentGallery.length) % newCurrentGallery.length;
+  newUpdateSliderPosition();
+}
+
+function newGoToSlide(n) {
+  newCurrentSlide = n;
+  newUpdateSliderPosition();
+}
+
+function newUpdateSliderPosition() {
+  const slidesContainer = document.querySelector('.new-gallery-slides');
+  const thumbnails = document.querySelectorAll('.new-gallery-thumbnail');
+  const captionElement = document.getElementById('newCaption');
+
+  if (slidesContainer && thumbnails && captionElement) {
+    // Move slides container to show current slide
+    slidesContainer.style.transform = `translateX(-${newCurrentSlide * 100}%)`;
+    
+    // Update active thumbnail
+    thumbnails.forEach((thumb, index) => {
+      thumb.classList.toggle('active', index === newCurrentSlide);
+    });
+
+    // Update caption
+    if (newCurrentGallery[newCurrentSlide]) {
+      captionElement.textContent = newCurrentGallery[newCurrentSlide].caption || '';
+    }
+  }
+}
+
+// Initialize new gallery functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Attach click handlers to all view project buttons
+  document.querySelectorAll('.gallery-view-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      const projectName = this.closest('.overlay-content').querySelector('h3').textContent;
+      openNewGallery(projectName);
+    });
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    const modal = document.getElementById('newGalleryModal');
+    if (modal && modal.style.display === 'flex') {
+      if (e.key === 'ArrowLeft') {
+        newPlusSlides(-1);
+      } else if (e.key === 'ArrowRight') {
+        newPlusSlides(1);
+      } else if (e.key === 'Escape') {
+        closeNewGallery();
+      }
+    }
+  });
+
+  // Close modal when clicking outside
+  const modal = document.getElementById('newGalleryModal');
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closeNewGallery();
+      }
     });
   }
 });
