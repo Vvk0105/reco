@@ -530,34 +530,95 @@ const newProjectGalleries = {
   "Lourde": [
     { src: "compressed img/Lourde/1.avif", caption: "" },
     { src: "compressed img/Lourde/2.avif", caption: "" },
-    { src: "compressed img/Lourde/3.avif", caption: "" }
+    { src: "compressed img/Lourde/3.avif", caption: "" },
+    { src: "compressed img/Lourde/4.avif", caption: "" },
+    { src: "compressed img/Lourde/5.avif", caption: "" },
+    { src: "compressed img/Lourde/6.avif", caption: "" },
+    { src: "compressed img/Lourde/7.avif", caption: "" },
+    { src: "compressed img/Lourde/8.avif", caption: "" },
+    { src: "compressed img/Lourde/9.avif", caption: "" },
+    { src: "compressed img/Lourde/10.avif", caption: "" },
+    { src: "compressed img/Lourde/11.avif", caption: "" },
+    { src: "compressed img/Lourde/12.avif", caption: "" },
+    { src: "compressed img/Lourde/13.avif", caption: "" },
+    { src: "compressed img/Lourde/14.avif", caption: "" },
+    { src: "compressed img/Lourde/15.avif", caption: "" },
+    { src: "compressed img/Lourde/16.avif", caption: "" },
+    { src: "compressed img/Lourde/17.avif", caption: "" },
+    { src: "compressed img/Lourde/18.avif", caption: "" },
   ],
   "Reco": [
     { src: "compressed img/reco/1.avif", caption: "" },
     { src: "compressed img/reco/2.avif", caption: "" },
-    { src: "compressed img/reco/3.avif", caption: "" }
+    { src: "compressed img/reco/3.avif", caption: "" },
+    { src: "compressed img/reco/4.avif", caption: "" },
+    { src: "compressed img/reco/5.avif", caption: "" },
+    { src: "compressed img/reco/6.avif", caption: "" },
+    { src: "compressed img/reco/7.avif", caption: "" },
+    { src: "compressed img/reco/8.avif", caption: "" },
+    { src: "compressed img/reco/9.avif", caption: "" },
+    { src: "compressed img/reco/10.avif", caption: "" },
+    { src: "compressed img/reco/11.avif", caption: "" },
+    { src: "compressed img/reco/12.avif", caption: "" },
+    { src: "compressed img/reco/13.avif", caption: "" },
+    { src: "compressed img/reco/14.avif", caption: "" },
+    { src: "compressed img/reco/15.avif", caption: "" },
+    { src: "compressed img/reco/16.avif", caption: "" },
+    { src: "compressed img/reco/17.avif", caption: "" },
+    { src: "compressed img/reco/18.avif", caption: "" },
+    { src: "compressed img/reco/19.avif", caption: "" },
+    { src: "compressed img/reco/20.avif", caption: "" },
   ],
   "Church": [
-    { src: "compressed img/church/1.avif", caption: "Church project" },
-    { src: "compressed img/church/2.avif", caption: "Church interior" },
-    { src: "compressed img/church/3.avif", caption: "Church exterior" }
+    { src: "compressed img/church/1.avif", caption: "" },
+    { src: "compressed img/church/2.avif", caption: "" },
+    { src: "compressed img/church/3.avif", caption: "" },
+    { src: "compressed img/church/4.avif", caption: "" },
+    { src: "compressed img/church/5.avif", caption: "" },
+    { src: "compressed img/church/6.avif", caption: "" },
+    { src: "compressed img/church/7.avif", caption: "" },
+    { src: "compressed img/church/8.avif", caption: "" },
+    { src: "compressed img/church/9.avif", caption: "" },
+    { src: "compressed img/church/10.avif", caption: "" },
+    { src: "compressed img/church/11.avif", caption: "" },
+    { src: "compressed img/church/12.avif", caption: "" },
+    { src: "compressed img/church/13.avif", caption: "" },
+    { src: "compressed img/church/14.avif", caption: "" },
+    { src: "compressed img/church/15.avif", caption: "" },
   ],
   "Clinic": [
     { src: "compressed img/clinic/1.avif", caption: "" },
     { src: "compressed img/clinic/2.avif", caption: "" },
-    { src: "compressed img/clinic/3.avif", caption: "" }
+    { src: "compressed img/clinic/3.avif", caption: "" },
+    { src: "compressed img/clinic/4.avif", caption: "" },
+    { src: "compressed img/clinic/5.avif", caption: "" },
+    { src: "compressed img/clinic/6.avif", caption: "" },
+    { src: "compressed img/clinic/7.avif", caption: "" },
+    { src: "compressed img/clinic/8.avif", caption: "" },
+    { src: "compressed img/clinic/9.avif", caption: "" },
+    { src: "compressed img/clinic/10.avif", caption: "" },
+    { src: "compressed img/clinic/11.avif", caption: "" }
+
   ],
   "Gym": [
     { src: "compressed img/gym/1.avif", caption: "" },
     { src: "compressed img/gym/2.avif", caption: "" },
-    { src: "compressed img/gym/3.avif", caption: "" }
+    { src: "compressed img/gym/3.avif", caption: "" },
+    { src: "compressed img/gym/4.avif", caption: "" },
+    { src: "compressed img/gym/5.avif", caption: "" },
+    { src: "compressed img/gym/6.avif", caption: "" },
+    { src: "compressed img/gym/7.avif", caption: "" },
+    { src: "compressed img/gym/8.avif", caption: "" }
   ],
   "Rock": [
     { src: "compressed img/rock/1.avif", caption: "" },
     { src: "compressed img/rock/2.avif", caption: "" },
-    { src: "compressed img/rock/3.avif", caption: "" }
+    { src: "compressed img/rock/3.avif", caption: "" },
+    { src: "compressed img/rock/4.avif", caption: "" },
+    { src: "compressed img/rock/5.avif", caption: "" },
+    { src: "compressed img/rock/6.avif", caption: "" },
   ]
-  // Add more projects as needed
+
 };
 
 function openNewGallery(projectName) {
