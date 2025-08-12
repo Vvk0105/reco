@@ -432,7 +432,8 @@ let newCurrentSlide = 0;
 let newCurrentGallery = [];
 
 const newProjectGalleries = {
-  "Arjun Residence": [
+  "Split Skin": [
+    { src: "compressed img/arjun/111.jpg", caption: "" },
     { src: "compressed img/arjun/1.avif", caption: "" },
     { src: "compressed img/arjun/2.avif", caption: "" },
     { src: "compressed img/arjun/3.avif", caption: "" },
@@ -449,7 +450,7 @@ const newProjectGalleries = {
     { src: "compressed img/arjun/14.avif", caption: "" },
   ],
  
-  "Sibi": [
+  "Ekam": [
     { src: "compressed img/sibi/1.avif", caption: "" },
     { src: "compressed img/sibi/2.avif", caption: "" },
     { src: "compressed img/sibi/3.avif", caption: "" },
@@ -483,7 +484,7 @@ const newProjectGalleries = {
     { src: "compressed img/sibi/31.avif", caption: "" }
 
   ],
-  "Kalyan Landscape": [
+  "Stacked Greens": [
     { src: "compressed img/KL/1.avif", caption: "" },
     { src: "compressed img/KL/2.avif", caption: "" },
     { src: "compressed img/KL/3.avif", caption: "" },
@@ -506,7 +507,7 @@ const newProjectGalleries = {
     { src: "compressed img/KL/20.avif", caption: "" },
     { src: "compressed img/KL/21.avif", caption: "" },
   ],
-  "Sathish": [
+  "Sukrithi": [
     { src: "compressed img/Sathish/1.avif", caption: "" },
     { src: "compressed img/Sathish/2.avif", caption: "" },
     { src: "compressed img/Sathish/3.avif", caption: "" },
@@ -527,7 +528,7 @@ const newProjectGalleries = {
     { src: "compressed img/Sathish/18.avif", caption: "" },
     { src: "compressed img/Sathish/19.avif", caption: "" },
   ],
-  "Lourde": [
+  "Divine Curve": [
     { src: "compressed img/Lourde/1.avif", caption: "" },
     { src: "compressed img/Lourde/2.avif", caption: "" },
     { src: "compressed img/Lourde/3.avif", caption: "" },
@@ -547,7 +548,7 @@ const newProjectGalleries = {
     { src: "compressed img/Lourde/17.avif", caption: "" },
     { src: "compressed img/Lourde/18.avif", caption: "" },
   ],
-  "Reco": [
+  "Past Forward": [
     { src: "compressed img/reco/1.avif", caption: "" },
     { src: "compressed img/reco/2.avif", caption: "" },
     { src: "compressed img/reco/3.avif", caption: "" },
@@ -569,7 +570,7 @@ const newProjectGalleries = {
     { src: "compressed img/reco/19.avif", caption: "" },
     { src: "compressed img/reco/20.avif", caption: "" },
   ],
-  "Church": [
+  "Tower of Faith": [
     { src: "compressed img/church/1.avif", caption: "" },
     { src: "compressed img/church/2.avif", caption: "" },
     { src: "compressed img/church/3.avif", caption: "" },
@@ -600,7 +601,7 @@ const newProjectGalleries = {
     { src: "compressed img/clinic/11.avif", caption: "" }
 
   ],
-  "Gym": [
+  "Coreform": [
     { src: "compressed img/gym/1.avif", caption: "" },
     { src: "compressed img/gym/2.avif", caption: "" },
     { src: "compressed img/gym/3.avif", caption: "" },
@@ -610,7 +611,7 @@ const newProjectGalleries = {
     { src: "compressed img/gym/7.avif", caption: "" },
     { src: "compressed img/gym/8.avif", caption: "" }
   ],
-  "Rock": [
+  "Faithstone": [
     { src: "compressed img/rock/1.avif", caption: "" },
     { src: "compressed img/rock/2.avif", caption: "" },
     { src: "compressed img/rock/3.avif", caption: "" },
