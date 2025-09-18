@@ -23,6 +23,7 @@ html{
 }
 body{
     font-family: "Poppins", sans-serif;
+    background-color: #E1D2C0;
 }
 
 body::-webkit-scrollbar {
@@ -383,7 +384,8 @@ video.background-video {
 
     /* About Page Styles */
     .about-page {
-        background-color: #ffffff;
+        /* background-color: #ffffff; */
+        background-color: #E1D2C0;
         color: #1a1a1a;
     }
     
@@ -634,7 +636,8 @@ video.background-video {
 .hero-section {
     padding: 120px 40px;
     text-align: center;
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
+    background-color: #E1D2C0;
     margin-top: 7rem;
 }
 
@@ -1524,7 +1527,8 @@ body.modal-open {
 
 .team-preview-section {
     padding: 100px 40px;
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
+    background-color: #E1D2C0;
 }
 
 .team-preview-container {
@@ -1850,7 +1854,8 @@ button:active {
 
     .peoples-container{
         padding: 100px 70px;
-        background-color: #f8f8f8;
+        /* background-color: #f8f8f8; */
+        background-color: #E1D2C0;
     }
 
     .heading-people {
@@ -2431,11 +2436,6 @@ button:active {
 
 /* about section  */
 
-
-.about-page {
-    background-color: #ffffff;
-}
-
 .about-container {
     padding-top: 80px; /* Adjust based on your header height */
 }
@@ -2448,7 +2448,8 @@ button:active {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
+    background-color: #E1D2C0;
     padding: 0 20px;
 }
 
@@ -3134,7 +3135,8 @@ footer {
 
 .project-gallery {
     padding: 60px 40px;
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
+    background-color: #E1D2C0;
 }
 
 .gallery-container {
@@ -3310,7 +3312,8 @@ footer {
 /* New Projects Gallery Styles */
 .projects-gallery-section {
   padding: 80px 20px;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
+  background-color: #E1D2C0;
 }
 
 .projects-gallery-grid {
