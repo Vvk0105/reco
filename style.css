@@ -2284,7 +2284,8 @@ button:active {
     }
 
     .card {
-        background: white;
+        /* background: white; */
+        background-color: #C9B49D;
         border-radius: 0.75rem;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         padding: 2rem;
@@ -2325,11 +2326,12 @@ button:active {
         border-radius: 0.5rem;
         font-size: 1rem;
         transition: all 0.2s;
+        background-color: #E1D2C0;
     }
 
     .form-input:focus {
         outline: none;
-        border-color: #3b82f6;
+        border-color: #d1d5db;
         box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
 
@@ -2340,7 +2342,7 @@ button:active {
 
     .submit-button {
         width: 100%;
-        background-color: #3b82f6;
+        background-color: #806D55;
         color: white;
         padding: 0.75rem;
         border: none;
@@ -2352,7 +2354,7 @@ button:active {
     }
 
     .submit-button:hover {
-        background-color: #2563eb;
+        background-color: #A89076;
     }
 
     /* Philosophy Quote */
@@ -2375,7 +2377,8 @@ button:active {
         align-items: center;
         justify-content: space-between;
         padding: 1rem;
-        background-color: #f9fafb;
+        /* background-color: #f9fafb; */
+        background-color: #E1D2C0;
         border-radius: 0.5rem;
         text-decoration: none;
         color: #1f2937;
