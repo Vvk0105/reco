@@ -2011,7 +2011,8 @@ button:active {
 /* content btwn  */
 
 .space-btwn{
-    background-color: #ece9e3;
+    /* background-color: #ece9e3; */
+    background-color: #bca992;
     padding: 40px;
     height: 200px;
     margin: 20px 0;
