@@ -458,7 +458,8 @@ video.background-video {
     }
     
     .service-card {
-        background-color: #f8f8f8;
+        /* background-color: #f8f8f8; */
+        background-color: #C9B49D;
         padding: 40px;
         border-radius: 8px;
         text-align: center;
@@ -519,7 +520,7 @@ video.background-video {
     .cta-section {
         text-align: center;
         padding: 80px 0;
-        background-color: #f8f8f8;
+        background-color: #C9B49D;
         margin-top: 80px;
     }
     
