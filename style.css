@@ -1429,9 +1429,9 @@ body.modal-open {
 }
 
 @media (max-width: 768px) {
-    .full-width-img {
+    /* .full-width-img {
         height: 50vh;
-    }
+    } */
     
     .works-gallery {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
