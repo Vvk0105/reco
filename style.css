@@ -3572,3 +3572,433 @@ footer {
     top: 10px;
   }
 }
+/* ===================================
+   Publications Page Styles
+   =================================== */
+
+/* Publications Section */
+.publications-section {
+    padding: 100px 40px;
+    background-color: #E1D2C0;
+}
+
+/* Publications Grid */
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Blog Card */
+.blog-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Blog Card Content */
+.blog-card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Blog Category Badge */
+.blog-category {
+    display: inline-block;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Blog Card Title */
+.blog-card h3 {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.blog-card:hover h3 {
+    color: #666;
+}
+
+/* Blog Card Description */
+.blog-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Blog Meta Info */
+.blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.blog-meta i {
+    margin-right: 6px;
+}
+
+/* Blog Tags */
+.blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.tag {
+    background-color: #C9B49D;
+    color: #1a1a1a;
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Responsive Design for Publications */
+@media (max-width: 1200px) {
+    .publications-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .publications-section {
+        padding: 60px 20px;
+    }
+    
+    .publications-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .blog-card-content {
+        padding: 25px;
+    }
+    
+    .blog-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-card-content {
+        padding: 20px;
+    }
+    
+    .blog-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .blog-card p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ===================================
+   Blog Modal Styles
+   =================================== */
+
+/* Read More Button */
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.read-more-btn:hover {
+    background-color: #333;
+    transform: translateX(5px);
+}
+
+.read-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover i {
+    transform: translateX(5px);
+}
+
+.blog-card {
+    cursor: pointer;
+}
+
+/* Blog Modal Container */
+.blog-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Blog Modal Content */
+.blog-modal-content {
+    background-color: #ffffff;
+    margin: 3% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.4s ease;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Modal Close Button */
+.blog-modal-close {
+    color: #999;
+    float: right;
+    font-size: 35px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 20px 25px 0 0;
+}
+
+.blog-modal-close:hover,
+.blog-modal-close:focus {
+    color: #1a1a1a;
+}
+
+/* Modal Header */
+.blog-modal-header {
+    padding: 40px 50px 30px;
+    border-bottom: 1px solid #eee;
+    background: linear-gradient(145deg, #f8f8f8 0%, #ffffff 100%);
+}
+
+.blog-modal-header .blog-category {
+    display: inline-block;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.blog-modal-header h2 {
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.blog-modal-header .blog-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.blog-modal-header .blog-meta i {
+    margin-right: 6px;
+    color: #C9B49D;
+}
+
+/* Modal Body */
+.blog-modal-body {
+    padding: 40px 50px 50px;
+    color: #333;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.blog-modal-body h3 {
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.blog-modal-body h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.blog-modal-body p {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.blog-modal-body ul {
+    margin-bottom: 25px;
+    padding-left: 30px;
+    list-style-type: disc;
+}
+
+.blog-modal-body ul li {
+    margin-bottom: 10px;
+    color: #444;
+    line-height: 1.7;
+}
+
+.blog-modal-body strong {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* Blog Footer */
+.blog-footer {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid #C9B49D;
+    text-align: center;
+}
+
+.blog-footer p {
+    font-size: 1.1rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Scrollbar Styling for Modal */
+.blog-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.blog-modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.blog-modal-content::-webkit-scrollbar-thumb {
+    background: #C9B49D;
+    border-radius: 4px;
+}
+
+.blog-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #1a1a1a;
+}
+
+/* Responsive Modal Design */
+@media (max-width: 768px) {
+    .blog-modal-content {
+        width: 95%;
+        margin: 5% auto;
+        max-height: 85vh;
+    }
+
+    .blog-modal-header {
+        padding: 30px 25px 20px;
+    }
+
+    .blog-modal-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .blog-modal-body {
+        padding: 30px 25px 40px;
+        font-size: 1rem;
+    }
+
+    .blog-modal-body h3 {
+        font-size: 1.4rem;
+    }
+
+    .blog-modal-body h4 {
+        font-size: 1.2rem;
+    }
+
+    .blog-modal-close {
+        font-size: 30px;
+        padding: 15px 20px 0 0;
+    }
+
+    .read-more-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-modal-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .blog-modal-body {
+        padding: 25px 20px 35px;
+    }
+
+    .blog-modal-body h3 {
+        font-size: 1.3rem;
+    }
+}
