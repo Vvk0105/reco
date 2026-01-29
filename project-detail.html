@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +10,19 @@
     <link rel="stylesheet" href="style.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NYR3PGQ9KH"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-NYR3PGQ9KH');
+        gtag('config', 'G-NYR3PGQ9KH');
     </script>
 </head>
+
 <body>
     <div id="loader">
         <div class="spinner"></div>
     </div>
-    
+
     <nav id="header" id="page-contents">
         <label class="logo" id="welcome-section">
             <a href="index.html"><img class="logo-top" src="Logo/reco logo black.webp" alt="RECO Architects"></a>
@@ -52,7 +54,7 @@
             <div class="project-description">
                 <!-- Content will be filled by JavaScript -->
             </div>
-            
+
             <div class="project-specs">
                 <!-- Content will be filled by JavaScript -->
             </div>
@@ -65,7 +67,7 @@
             <h2>Related Projects</h2>
             <p>Explore more of our residential works</p>
         </div>
-        
+
         <div class="projects-grid">
             <!-- Will be filled by JavaScript -->
         </div>
@@ -77,13 +79,10 @@
             <div class="footer-section">
                 <!-- <h3>Our Location</h3> -->
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d246.63802593121565!2d76.9631053!3d8.4791051!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bb2ab8f2dc53%3A0x7a4e6eafabf70571!2sRECO%20Architects!5e0!3m2!1sen!2sin!4v1753804066512!5m2!1sen!2sin" 
-                            width="100%" 
-                            height="300" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d246.63802593121565!2d76.9631053!3d8.4791051!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bb2ab8f2dc53%3A0x7a4e6eafabf70571!2sRECO%20Architects!5e0!3m2!1sen!2sin!4v1753804066512!5m2!1sen!2sin"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
             </div>
@@ -119,7 +118,7 @@
                 <li><a href="people.html">People</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="coming-soon.html">Publications</a></li>
+                <li><a href="publications.html">Publications</a></li>
                 <li><a href="coming-soon.html">Workshop</a></li>
                 <li><a href="coming-soon.html">Products</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -132,7 +131,7 @@
         // Get project ID from URL
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('id');
-        
+
         // Project data (in a real app, this would come from an API)
         const projects = {
             'sukrithi': {
@@ -160,7 +159,7 @@
                     'compressed img/Sathish/16.avif',
                     'compressed img/Sathish/17.avif',
                     'compressed img/Sathish/18.avif',
-                    'compressed img/Sathish/19.avif',       
+                    'compressed img/Sathish/19.avif',
                 ],
                 specs: {
                     'Design and Execution': 'RECO Architects',
@@ -208,7 +207,7 @@
                     'compressed img/sibi/27.avif',
                     'compressed img/sibi/28.avif',
                     'compressed img/sibi/29.avif',
-                    
+
                 ],
                 specs: {
                     'Execution': 'RECO Architects',
@@ -271,7 +270,7 @@
                     'Year': '2021'
                 }
             },
-            
+
             'stacked-greens': {
                 title: 'Stacked Greens',
                 location: 'Trivandrum',
@@ -309,7 +308,7 @@
                     'Year': '2022'
                 }
             },
-            
+
             'the-rock': {
                 title: 'The Rock That Stayed',
                 location: 'Peroorkada, Trivandrum',
@@ -384,7 +383,7 @@
                     'compressed img/reco/18.avif',
                     'compressed img/reco/19.avif',
                     'compressed img/reco/20.avif',
-                    
+
                 ],
                 specs: {
                     'Design and Execution': 'RECO Architects',
@@ -478,7 +477,7 @@
             }
 
             document.title = `RECO Architects | ${project.title}`;
-            
+
             // Set hero section
             const hero = document.getElementById('project-hero');
             hero.innerHTML = `
@@ -488,7 +487,7 @@
                 </div>
                 <div class="hero-image" style="background-image: url('${project.images[0]}')"></div>
             `;
-            
+
             // Set gallery
             const gallery = document.querySelector('.gallery-container');
             gallery.innerHTML = project.images.map(img => `
@@ -496,7 +495,7 @@
                     <img src="${img}" alt="${project.title}" loading="lazy">
                 </div>
             `).join('');
-            
+
             // Set description
             const description = document.querySelector('.project-description');
             description.innerHTML = `
@@ -505,7 +504,7 @@
                 <h3>Concept</h3>
                 <p>${project.concept}</p>
             `;
-            
+
             // Set specs
             const specs = document.querySelector('.project-specs');
             specs.innerHTML = `
@@ -519,13 +518,13 @@
                     `).join('')}
                 </ul>
             `;
-            
+
             // Set related projects (filter current project)
             const related = document.querySelector('.related-projects .projects-grid');
             const relatedProjects = Object.entries(projects)
                 .filter(([id]) => id !== projectId && projects[id].type === project.type)
                 .slice(0, 3);
-            
+
             if (relatedProjects.length > 0) {
                 related.innerHTML = relatedProjects.map(([id, proj]) => `
                     <div class="project-card" onclick="openProject('${id}')">
@@ -546,14 +545,15 @@
                 document.querySelector('.related-projects').style.display = 'none';
             }
         }
-        
+
         // Initialize
         document.addEventListener('DOMContentLoaded', loadProject);
-        
+
         // Global function for navigation
-        window.openProject = function(projectId) {
+        window.openProject = function (projectId) {
             window.location.href = `project-detail.html?id=${projectId}`;
         };
     </script>
 </body>
+
 </html>
